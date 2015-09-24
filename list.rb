@@ -37,7 +37,7 @@ print "Do you want to delete ? (Y or N)"
 cmd = gets.chomp
 
 if cmd == "Y" or cmd == "y"
-    print "Plz type name which want to delete : ~"
+    print "Plz type name which want to delete : "
     dname = gets.chomp
     delete(name:dname)
 else
