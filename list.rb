@@ -25,21 +25,33 @@ end
 
 list << {name:name, phonenumber:phonenumber, gender:gender}
 
-print list
+puts list
 
-print "Do you want to input more? (Y or N)"
+cmd = cmd
+loop do
+puts "Do you want to input more? (Y or N)"
 cmd = gets.chomp
-break if cmd == "N" or cmd == "n"
-
+break if cmd == "N" or cmd == "n" or cmd =="y" or cmd =="Y"
 end
 
-print "Do you want to delete ? (Y or N)"
+break if cmd == "N" or cmd == "n"
+end
+
+
+puts "Do you want to delete ? (Y or N)"
 cmd = gets.chomp
 
 if cmd == "Y" or cmd == "y"
     print "Plz type name which want to delete : "
     dname = gets.chomp
-    delete(name:dname)
+    list.each do |l|
+        if l[:name] == dname
+            list.delete(l)
+        end
+    end
+puts list
+puts "Thank you for using"
+
 else
     print "Thank you for using"
 end
